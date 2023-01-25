@@ -1,5 +1,12 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  RefreshControl,
+  refreshing,
+} from 'react-native';
 import SearchInput from '../../components/searchHome';
 import Header from '../../components/headerHome';
 import FoodDelivery from '../../components/foodDelivery';
@@ -11,11 +18,25 @@ import Shop from '../shop';
 import DailyDeals from '../../components/dailyDeals';
 import Cuisines from '../../components/cuisines';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import { ScrollView } from 'react-native-gesture-handler';
+import BecomePro from '../../components/becomePro';
+import PandaReward from '../../components/pandaReward';
 export default function Home() {
+  const [refreshing, setRefreshing] = useState(false);
+  const onRefresh = () => {
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  };
   return (
-    <ScrollView>
-      <View style={{backgroundColor: '#ebebeb'}}>
+    <ScrollView
+      refreshControl={
+        <RefreshControl
+          onRefresh={onRefresh}
+          refreshing={refreshing}
+          colors={['#F81379']}
+        />
+      }>
+      <View style={{backgroundColor: '#eee'}}>
         <Header />
         <SearchInput />
         <View
@@ -38,6 +59,8 @@ export default function Home() {
         </View>
         <DailyDeals />
         <Cuisines />
+        <BecomePro />
+        <PandaReward />
       </View>
     </ScrollView>
   );

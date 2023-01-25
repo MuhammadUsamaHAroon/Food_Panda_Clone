@@ -2,7 +2,7 @@ import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
 import React, {useState} from 'react';
 
 export default function Cuisines() {
-  const [categories, setCategories] = useState([
+  const [categories1, setCategories1] = useState([
     {
       image: require('../assets/images/pizza.png'),
       name: 'Pizza',
@@ -31,6 +31,8 @@ export default function Cuisines() {
       image: require('../assets/images/chiness.png'),
       name: 'Chinese',
     },
+  ]);
+  const [categories2, setCategories2] = useState([
     {
       image: require('../assets/images/bbq.png'),
       name: 'BBQ',
@@ -64,17 +66,32 @@ export default function Cuisines() {
       name: 'Sushi',
     },
   ]);
+  console.log(categories1.image);
   return (
     <View style={styles.cuisines}>
       <Text style={styles.title}>Cuisines</Text>
       <FlatList
-        // keyExtractor={(item, index) => index.toString()}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        data={categories1}
         renderItem={({item, index}) => {
           return (
-            <View style={{flexDirection: 'row'}} key={index}>
-              <View>
-                <Image source={item.image} />
-              </View>
+            <View style={styles.image_view}>
+              <Image source={item.image} key={index} style={styles.images} />
+              <Text style={styles.item_Name}>{item.name}</Text>
+            </View>
+          );
+        }}
+      />
+      <FlatList
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        data={categories2}
+        renderItem={({item, index}) => {
+          return (
+            <View style={styles.image_view}>
+              <Image source={item.image} key={index} style={styles.images} />
+              <Text style={styles.item_Name}>{item.name}</Text>
             </View>
           );
         }}
@@ -86,14 +103,36 @@ const styles = StyleSheet.create({
   cuisines: {
     backgroundColor: '#fff',
     width: '100%',
-    height: 250,
+    height: 345,
+    paddingBottom: 15,
   },
   title: {
     color: '#333',
     fontSize: 20,
     marginLeft: 15,
-    marginTop: 10,
+    marginTop: 25,
     marginBottom: 15,
     fontWeight: 'bold',
+  },
+  image_view: {
+    height: 90,
+    width: 90,
+    borderRadius: 15,
+    backgroundColor: '#eee',
+    marginLeft: 6,
+    marginRight: 6,
+  },
+  item_Name: {
+    fontWeight: 'bold',
+    color: '#333',
+    textAlign: 'center',
+  },
+  images: {
+    resizeMode: 'stretch',
+    height: 80,
+    width: 80,
+    borderRadius: 15,
+    alignSelf: 'flex-end',
+    marginTop: 13,
   },
 });

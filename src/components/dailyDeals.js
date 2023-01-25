@@ -28,7 +28,7 @@ export default function DailyDeals() {
           // keyExtractor={({item, index}) => index.toString()}
           data={deals}
           renderItem={({item, index}) => {
-            return <Image source={item} key={index} style={styles.images} />;
+            return <Image source={item} style={styles.images} key={index} />;
           }}
         />
       </View>
@@ -37,27 +37,31 @@ export default function DailyDeals() {
 }
 const styles = StyleSheet.create({
   daily_deals: {
-    height: 250,
+    height: 260,
     width: '100%',
     backgroundColor: '#fff',
+
   },
   title: {
     color: '#333',
     fontSize: 20,
     marginLeft: 15,
-    marginTop: 10,
+    marginTop: 25,
     marginBottom: 15,
     fontWeight: 'bold',
   },
-  image_view: {
-    // paddingLeft: 10,
-    // marginRight: 10,
-  },
+  //   image_view: {
+  //     height: 195,
+  //     width: 150,
+  //     borderRadius: 20,
+
+  //   },
   images: {
     resizeMode: 'stretch',
     height: 190,
     width: 150,
     borderRadius: 15,
+    borderWidth: 1,
     marginRight: 6,
     marginLeft: 4,
   },

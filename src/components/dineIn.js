@@ -17,7 +17,7 @@ export default function DineIn() {
           resizeMode: 'stretch',
           alignSelf: 'flex-end',
           marginTop: 15,
-          marginLeft:5
+          marginLeft: 5,
         }}
       />
     </View>
@@ -30,6 +30,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     borderRadius: 10,
     flexDirection: 'row',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+
+    elevation: 2,
   },
   title: {
     color: '#333',

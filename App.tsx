@@ -98,18 +98,23 @@ import {
 // }
 import {NavigationContainer} from '@react-navigation/native';
 import DrawerNavigator from './config/navigation/drawer';
+import StackNavigator from './config/navigation/mainNavigator';
+import TabNavigation from './config/navigation/topTabNavigator';
 export default function App() {
   return (
-    <NavigationContainer>
-      <DrawerNavigator />
-    </NavigationContainer>
+    <SafeAreaView style={styles.sectionContainer}>
+      <NavigationContainer>
+        {/* <DrawerNavigator /> */}
+        <StackNavigator />
+        {/* <TabNavigation /> */}
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+    flex: 1,
   },
   sectionTitle: {
     fontSize: 24,

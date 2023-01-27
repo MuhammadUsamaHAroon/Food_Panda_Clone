@@ -5,8 +5,9 @@ import Header from '../components/headerHome';
 export default function Shop() {
   return (
     <View>
-      <Header />
-      <SearchInput />
+      {/* <Header />
+      <SearchInput /> */}
+      <Text>Shop</Text>
     </View>
   );
 }

@@ -5,6 +5,7 @@ export default function Profile() {
   return (
     <View>
       <Header />
+      <Text>Profile</Text>
     </View>
   );
 }

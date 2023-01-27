@@ -1,8 +1,9 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaProvider} from 'react-native';
 import React from 'react';
 import Octicons from 'react-native-vector-icons/dist/Octicons';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import {useNavigation} from '@react-navigation/native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 export default function Header() {
   const navigation = useNavigation();
   return (
@@ -29,6 +30,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 5,
     // flex:1
+   
   },
   align_view: {
     flexDirection: 'row',

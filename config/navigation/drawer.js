@@ -6,13 +6,16 @@ import ProfileScreen from '../../src/views/profile';
 import ShopScreen from '../../src/views/shop';
 import SettingScreen from '../../src/views/settings';
 import CustomDrawer from '../../src/components/customDrawer';
+import SearchBar from '../../src/views/searchBar';
 import Feather from 'react-native-vector-icons/dist/Feather';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-
+import StackNavigator from './mainNavigator';
+import mainStack from './mainNavigator';
+import TopTab from './topTabNavigator'
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
-  return <MainDrawer />
+  return <MainDrawer />;
 }
 function MainDrawer() {
   return (
@@ -53,8 +56,17 @@ function MainDrawer() {
           ),
         }}
       />
+      {/* <Drawer.Screen
+        name="TopTab"
+        component={TopTab}
+        options={{
+          drawerIcon: ({color}) => (
+            <Ionicons color={color} size={22} name="person-outline" />
+          ),
+        }}
+      /> */}
 
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="Shop"
         component={ShopScreen}
         options={{
@@ -62,7 +74,7 @@ function MainDrawer() {
             <Feather color={color} size={22} name="shopping-cart" />
           ),
         }}
-      />
+      /> */}
       <Drawer.Screen
         name="Settings"
         component={SettingScreen}
@@ -72,6 +84,16 @@ function MainDrawer() {
           ),
         }}
       />
+
+      {/* <Drawer.Screen
+        name="SearchBar"
+        component={SearchBar}
+        options={{
+          drawerIcon: ({color}) => (
+            <Feather color={color} size={22} name="shopping-cart" />
+          ),
+        }}
+      /> */}
       {/* <Drawer.Screen name="Notifications" component={NotificationsScreen} /> */}
     </Drawer.Navigator>
   );

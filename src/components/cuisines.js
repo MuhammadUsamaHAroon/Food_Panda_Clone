@@ -1,7 +1,15 @@
-import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
-
+import {useNavigation} from '@react-navigation/native';
 export default function Cuisines() {
+  const navigation = useNavigation();
   const [categories1, setCategories1] = useState([
     {
       image: require('../assets/images/pizza.png'),
@@ -76,10 +84,13 @@ export default function Cuisines() {
         data={categories1}
         renderItem={({item, index}) => {
           return (
-            <View style={styles.image_view}>
+            <TouchableOpacity
+              style={styles.image_view}
+              activeOpacity={7}
+              onPress={() => navigation.navigate('Products')}>
               <Image source={item.image} key={index} style={styles.images} />
               <Text style={styles.item_Name}>{item.name}</Text>
-            </View>
+            </TouchableOpacity>
           );
         }}
       />
@@ -89,10 +100,13 @@ export default function Cuisines() {
         data={categories2}
         renderItem={({item, index}) => {
           return (
-            <View style={styles.image_view}>
+            <TouchableOpacity
+              style={styles.image_view}
+              activeOpacity={7}
+              onPress={() => navigation.navigate('Products')}>
               <Image source={item.image} key={index} style={styles.images} />
               <Text style={styles.item_Name}>{item.name}</Text>
-            </View>
+            </TouchableOpacity>
           );
         }}
       />

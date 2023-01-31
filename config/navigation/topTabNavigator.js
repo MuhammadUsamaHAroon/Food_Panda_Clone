@@ -11,24 +11,21 @@ const MyTabs = () => {
     <Tab.Navigator
       initialRouteName="Restaurant"
       screenOptions={({route}) => ({
-        headerShown: false,
-        tabBarIcon: ({focused, color, size}) => {
-          let iconName;
-          if (route.name === 'Restaurant') {
-            iconName = 'home';
-            size = focused ? 28 : 20;
-          } else if (route.name === 'Shop') {
-            iconName = 'setting';
-            size = focused ? 28 : 20;
-          }
-
-          return <AntDesign name={iconName} size={size} color={color} />;
+        tabBarScrollEnabled: false,
+        headerShown: true,
+        tabBarStyle: {
+          backgroundColor: '#fff',
+          height: 50,
         },
-        tabBarActiveTintColor: 'coral',
-        tabBarInactiveTintColor: 'gray',
-        tabBarActiveBackgroundColor: '#eee',
+        tabBarActiveTintColor: '#F81379',
+        tabBarInactiveTintColor: '#333',
+        tabBarActiveBackgroundColor: '#F81',
         tabBarShowLabel: true,
-        tabBarLabelStyle: {fontSize: 12},
+        tabBarLabelStyle: {fontSize: 14},
+        tabBarIndicatorStyle: {
+          borderBottomColor: '#F81379',
+          borderBottomWidth: 2,
+        },
       })}>
       <Tab.Screen name="Restaurant" component={RestaurantScreen} />
       <Tab.Screen name="Shop" component={ShopScreen} />

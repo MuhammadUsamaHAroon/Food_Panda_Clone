@@ -97,15 +97,15 @@ import {
 //   );
 // }
 import {NavigationContainer} from '@react-navigation/native';
-import DrawerNavigator from './config/navigation/drawer';
-import StackNavigator from './config/navigation/mainNavigator';
-import TabNavigation from './config/navigation/topTabNavigator';
+// import DrawerNavigator from './config/navigation/drawer';
+import MainStack from './config/navigation/mainNavigator';
+// import TabNavigation from './config/navigation/topTabNavigator';
 export default function App() {
   return (
     <SafeAreaView style={styles.sectionContainer}>
       <NavigationContainer>
         {/* <DrawerNavigator /> */}
-        <StackNavigator />
+        <MainStack />
         {/* <TabNavigation /> */}
       </NavigationContainer>
     </SafeAreaView>

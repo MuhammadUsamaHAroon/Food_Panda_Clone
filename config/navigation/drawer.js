@@ -11,7 +11,7 @@ import Feather from 'react-native-vector-icons/dist/Feather';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import StackNavigator from './mainNavigator';
 import mainStack from './mainNavigator';
-import TopTab from './topTabNavigator'
+import TopTab from './topTabNavigator';
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
@@ -20,7 +20,6 @@ export default function DrawerNavigator() {
 function MainDrawer() {
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
       drawerContent={props => <CustomDrawer {...props} />}
       screenOptions={{
         headerShown: false,
@@ -39,15 +38,6 @@ function MainDrawer() {
         },
       }}>
       <Drawer.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          drawerIcon: ({color}) => (
-            <Ionicons color={color} size={22} name="person-outline" />
-          ),
-        }}
-      />
-      <Drawer.Screen
         name="Home"
         component={HomeScreen}
         options={{
@@ -56,6 +46,16 @@ function MainDrawer() {
           ),
         }}
       />
+      <Drawer.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          drawerIcon: ({color}) => (
+            <Ionicons color={color} size={22} name="person-outline" />
+          ),
+        }}
+      />
+
       {/* <Drawer.Screen
         name="TopTab"
         component={TopTab}

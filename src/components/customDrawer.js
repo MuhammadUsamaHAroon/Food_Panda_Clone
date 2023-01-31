@@ -31,7 +31,7 @@ export default function CustomDrawer(props) {
             fontSize: 18,
             marginLeft: 13,
             paddingBottom: 20,
-            marginTop:5
+            marginTop: 5,
           }}>
           Usama Haroon
         </Text>

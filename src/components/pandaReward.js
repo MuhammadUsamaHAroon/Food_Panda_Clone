@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 export default function PandaReward() {
@@ -11,7 +11,7 @@ export default function PandaReward() {
         paddingTop: 8,
         paddingBottom: 30,
       }}>
-      <View style={styles.panda_reward}>
+      <TouchableOpacity activeOpacity={0.7} style={styles.panda_reward}>
         <View>
           <Text style={styles.title}>Try panda rewards!</Text>
           <Text style={styles.text}>Earn points and win prizes</Text>
@@ -26,7 +26,7 @@ export default function PandaReward() {
             marginLeft: 34,
           }}
         />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }

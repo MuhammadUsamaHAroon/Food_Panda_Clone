@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 export default function BecomePro() {
@@ -10,7 +10,7 @@ export default function BecomePro() {
         alignItems: 'center',
         paddingBottom8: 8,
       }}>
-      <View style={styles.become_pro}>
+      <TouchableOpacity activeOpacity={0.7} style={styles.become_pro}>
         <View>
           <Text style={styles.title}>Become a pro</Text>
           <Text style={styles.text}>and get exclusive deals</Text>
@@ -26,7 +26,7 @@ export default function BecomePro() {
             marginBottom: 7,
           }}
         />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }

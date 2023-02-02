@@ -1,9 +1,9 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 export default function PandaMart() {
   return (
-    <View style={styles.panda_mart}>
+    <TouchableOpacity activeOpacity={0.8} style={styles.panda_mart}>
       <Text style={styles.title}>PandaMart</Text>
       <Text style={styles.text}>Convenience, Delivered!</Text>
       <Image
@@ -17,7 +17,7 @@ export default function PandaMart() {
           marginTop: 15,
         }}
       />
-    </View>
+    </TouchableOpacity>
   );
 }
 const styles = StyleSheet.create({

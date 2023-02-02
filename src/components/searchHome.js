@@ -12,11 +12,10 @@ import {useNavigation} from '@react-navigation/native';
 export default function SearchInput() {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity
-      activeOpacity={7}
-      style={styles.parentInput}
-      onPress={() => navigation.navigate('SearchBar')}>
-      <View
+    <View style={styles.parentInput}>
+      <TouchableOpacity
+        activeOpacity={0.9}
+        onPress={() => navigation.navigate('SearchBar')}
         style={{
           flexDirection: 'row',
           // justifyContent: 'center',
@@ -32,13 +31,15 @@ export default function SearchInput() {
           name="search-outline"
           style={{marginLeft: 15}}
         />
-        <Text style={{marginLeft: 10}}>Search for Shops & Restaurants</Text>
+        <Text style={{marginLeft: 10, color: '#333'}}>
+          Search for Shops & Restaurants
+        </Text>
         {/* <TextInput
           style={styles.input}
           placeholder="Search for Shops & Restaurants"
         /> */}
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </View>
   );
 }
 const styles = StyleSheet.create({

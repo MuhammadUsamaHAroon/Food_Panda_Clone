@@ -13,13 +13,13 @@ import ProductsScreen from '../../src/components/products';
 import SplashScreen from '../../src/views/splash';
 
 const Stack = createStackNavigator();
-
+  
 // export default function StackNavigator() {
 //   return <MainStack />;
 // }
 const MainStack = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash">
+    <Stack.Navigator initialRouteName="Cart">
       <Stack.Screen
         name="Drawer"
         component={DrawerNavigator}
@@ -49,11 +49,6 @@ const MainStack = () => {
       <Stack.Screen
         name="Products"
         component={ProductsScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Splash"
-        component={SplashScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

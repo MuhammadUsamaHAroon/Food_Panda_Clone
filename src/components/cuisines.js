@@ -86,7 +86,7 @@ export default function Cuisines() {
           return (
             <TouchableOpacity
               style={styles.image_view}
-              activeOpacity={7}
+              activeOpacity={0.6}
               onPress={() => navigation.navigate('Products')}>
               <Image source={item.image} key={index} style={styles.images} />
               <Text style={styles.item_Name}>{item.name}</Text>
@@ -102,7 +102,7 @@ export default function Cuisines() {
           return (
             <TouchableOpacity
               style={styles.image_view}
-              activeOpacity={7}
+              activeOpacity={0.6}
               onPress={() => navigation.navigate('Products')}>
               <Image source={item.image} key={index} style={styles.images} />
               <Text style={styles.item_Name}>{item.name}</Text>

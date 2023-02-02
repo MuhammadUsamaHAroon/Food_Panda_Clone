@@ -1,10 +1,20 @@
-import {View, Text, StyleSheet, ImageBackground, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import Feather from 'react-native-vector-icons/dist/Feather';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+import {addToCart} from '../store/action';
+import {useDispatch} from 'react-redux';
 export default function Products() {
+  const dispatch = useDispatch();
   const [productsList, setProductsList] = useState([
     {
       image: require('../assets/images/pizza_image.jpg'),
@@ -84,13 +94,17 @@ export default function Products() {
   return (
     <View style={styles.parent_view}>
       <View style={styles.header_view}>
-        <AntDesign
-          color={'#F81379'}
-          size={22}
-          name="arrowleft"
-          style={{marginLeft: 20, marginTop: 5, marginRight: 15}}
+        <TouchableOpacity
           onPress={() => navigation.navigate('Home')}
-        />
+          activeOpacity={0.5}>
+          <AntDesign
+            color={'#F81379'}
+            size={22}
+            name="arrowleft"
+            style={{marginLeft: 20, marginTop: 5, marginRight: 15}}
+          />
+        </TouchableOpacity>
+
         <Text style={styles.text}>Pizza</Text>
       </View>
       <FlatList
@@ -98,7 +112,10 @@ export default function Products() {
         renderItem={({item, index}) => {
           return (
             <View style={styles.product_main_view} key={index}>
-              <View style={styles.image_view}>
+              <TouchableOpacity
+                style={styles.image_view}
+                activeOpacity={0.7}
+                onPress={() => dispatch(addToCart(item, index))}>
                 <ImageBackground
                   source={item.image}
                   imageStyle={{borderRadius: 6}}
@@ -165,7 +182,7 @@ export default function Products() {
                     </Text>
                   </View>
                 </ImageBackground>
-              </View>
+              </TouchableOpacity>
               <View
                 style={{
                   flexDirection: 'row',
@@ -198,10 +215,14 @@ export default function Products() {
                     style={{color: '#333', fontWeight: 'bold', marginRight: 2}}>
                     {item.otherDetails.rating}
                   </Text>
-                  <Text>{item.otherDetails.orders}</Text>
+                  <Text style={{color: 'gray'}}>
+                    {item.otherDetails.orders}
+                  </Text>
                 </View>
               </View>
-              <Text style={{marginLeft: 17}}>$$ . {item.name}</Text>
+              <Text style={{marginLeft: 17, color: 'gray'}}>
+                $$ . {item.name}
+              </Text>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <MaterialIcons
                   color={'gray'}
@@ -210,7 +231,7 @@ export default function Products() {
                   style={{marginLeft: 15, marginTop: 2, marginRight: 5}}
                   onPress={() => navigation.navigate('Home')}
                 />
-                <Text>{item.deliveryCharges}</Text>
+                <Text style={{color: 'gray'}}>{item.deliveryCharges}</Text>
               </View>
             </View>
           );

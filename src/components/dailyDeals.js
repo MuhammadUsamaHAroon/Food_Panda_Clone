@@ -1,4 +1,11 @@
-import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
 
 export default function DailyDeals() {
@@ -28,7 +35,11 @@ export default function DailyDeals() {
           // keyExtractor={({item, index}) => index.toString()}
           data={deals}
           renderItem={({item, index}) => {
-            return <Image source={item} style={styles.images} key={index} />;
+            return (
+              <TouchableOpacity key={index} activeOpacity={0.7}>
+                <Image source={item} style={styles.images} />
+              </TouchableOpacity>
+            );
           }}
         />
       </View>
@@ -40,7 +51,6 @@ const styles = StyleSheet.create({
     height: 260,
     width: '100%',
     backgroundColor: '#fff',
-
   },
   title: {
     color: '#333',

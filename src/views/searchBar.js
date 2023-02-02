@@ -12,6 +12,7 @@ import RestaurantScreen from '../../src/views/restaurant';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import {TabView, SceneMap} from 'react-native-tab-view';
+import Restaurant from '../../src/views/restaurant';
 
 const FirstRoute = () => <View style={{flex: 1, backgroundColor: '#ff4081'}} />;
 
@@ -65,12 +66,13 @@ export default function SearchBar() {
           <Text style={styles.shops_text}>Shops</Text>
         </TouchableOpacity>
       </View> */}
-      <TabView
+      {/* <TabView
         navigationState={{index, routes}}
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{width: layout.width}}
-      />
+      /> */}
+      <Restaurant />
     </View>
   );
 }

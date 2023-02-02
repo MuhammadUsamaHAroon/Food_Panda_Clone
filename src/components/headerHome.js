@@ -12,7 +12,7 @@ export default function Header() {
     <View style={styles.header_Container}>
       <View style={styles.align_view}>
         <TouchableOpacity
-          activeOpacity={7}
+          activeOpacity={0.6}
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
           <Octicons color={'#fff'} size={22} name="three-bars" />
         </TouchableOpacity>
@@ -20,12 +20,11 @@ export default function Header() {
           <Text style={styles.area_address}>R 583 Block 14 FB Area...</Text>
           <Text style={styles.city_address}>Karachi</Text>
         </View>
-        <Ionicons
-          color={'#fff'}
-          size={22}
-          name="cart-outline"
+        <TouchableOpacity
           onPress={() => navigation.navigate('Cart')}
-        />
+          activeOpacity={0.7}>
+          <Ionicons color={'#fff'} size={22} name="cart-outline" />
+        </TouchableOpacity>
       </View>
     </View>
   );

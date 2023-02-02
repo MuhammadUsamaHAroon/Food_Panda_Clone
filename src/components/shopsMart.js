@@ -1,9 +1,9 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 export default function ShopsMart() {
   return (
-    <View style={styles.shops_mart}>
+    <TouchableOpacity activeOpacity={0.8} style={styles.shops_mart}>
       <View>
         <Text style={styles.title}>Shops</Text>
         <Text style={styles.text}>Everyday</Text>
@@ -20,7 +20,7 @@ export default function ShopsMart() {
           marginTop: 15,
         }}
       />
-    </View>
+    </TouchableOpacity>
   );
 }
 const styles = StyleSheet.create({

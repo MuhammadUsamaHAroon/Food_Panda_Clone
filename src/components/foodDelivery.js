@@ -1,9 +1,9 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 export default function FoodDelivery() {
   return (
-    <View style={styles.FoodDelivery_container}>
+    <TouchableOpacity activeOpacity={0.8} style={styles.FoodDelivery_container}>
       <Text style={styles.title}>Food Delivery</Text>
       <Text style={styles.text}>Order from your favourite restaurants...</Text>
       <Image
@@ -17,7 +17,7 @@ export default function FoodDelivery() {
           marginTop: 18,
         }}
       />
-    </View>
+    </TouchableOpacity>
   );
 }
 const styles = StyleSheet.create({

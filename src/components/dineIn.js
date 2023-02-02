@@ -1,9 +1,9 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 export default function DineIn() {
   return (
-    <View style={styles.dine_in}>
+    <TouchableOpacity activeOpacity={0.8} style={styles.dine_in}>
       <View>
         <Text style={styles.title}>Dine-in</Text>
         <Text style={styles.text}>Eat out and</Text>
@@ -20,7 +20,7 @@ export default function DineIn() {
           marginLeft: 5,
         }}
       />
-    </View>
+    </TouchableOpacity>
   );
 }
 const styles = StyleSheet.create({

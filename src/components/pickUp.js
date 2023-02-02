@@ -1,9 +1,9 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 export default function PickUp() {
   return (
-    <View style={styles.pick_up}>
+    <TouchableOpacity activeOpacity={0.8} style={styles.pick_up}>
       <View>
         <Text style={styles.title}>Pick-up</Text>
         <Text style={styles.text}>Enjoy up to</Text>
@@ -20,7 +20,7 @@ export default function PickUp() {
           marginLeft: 3.5,
         }}
       />
-    </View>
+    </TouchableOpacity>
   );
 }
 const styles = StyleSheet.create({

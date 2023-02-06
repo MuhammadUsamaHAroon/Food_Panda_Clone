@@ -13,7 +13,7 @@ import ProductsScreen from '../../src/components/products';
 import SplashScreen from '../../src/views/splash';
 
 const Stack = createStackNavigator();
-  
+
 // export default function StackNavigator() {
 //   return <MainStack />;
 // }
